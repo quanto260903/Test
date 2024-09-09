@@ -1,0 +1,54 @@
+﻿@model X.PagedList.IPagedList<WebApplication1.Models.Student>
+@using X.PagedList;
+@using X.Web.PagedList
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+@{
+    ViewBag.Title = "Students";
+}
+
+<h2>Students</h2>
+
+<p>
+    <a href="@Url.Action("Create")" class="btn btn-success">
+        <span class="cil-contrast"></span> Create New
+    </a>
+</p>
+@using (Html.BeginForm("Index", "Students", FormMethod.Get))
+{
+    <p>
+        Find by name: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Search" />
+    </p>
+}
+<div id="studentList">
+    @await Html.PartialAsync("StudentList", Model)
+</div>
+
+@section Scripts {
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // AJAX cho phân trang
+            $(document).on('click', '.pagination a', function (e) {
+                e.preventDefault();
+                var url = $(this).attr('href');
+                $.get(url, function (data) {
+                    $('#studentList').html(data);
+                });
+            });
+
+            // AJAX cho tìm kiếm
+            $('#searchForm').on('submit', function (e) {
+                e.preventDefault();
+                $.get($(this).attr('action'), $(this).serialize(), function (data) {
+                    $('#studentList').html(data);
+                });
+            });
+        });
+    </script>
+}
+
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+

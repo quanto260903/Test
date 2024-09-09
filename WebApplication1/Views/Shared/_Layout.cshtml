@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Contoso University</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
+    <meta name="author" content="Łukasz Holeczek">
+    <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
+    <link href="~/coreui-5.1.2-dist/css/coreui.css" rel="stylesheet" />
+    <link href="~/coreui-5.1.2-dist/css/coreui.min.css" rel="stylesheet" />
+    <link href="~/coreui-5.1.2-dist/css/coreui.rtl.css" rel="stylesheet" />
+    <link href="~/coreui-5.1.2-dist/css/coreui.rtl.min.css" rel="stylesheet" />
+    
+    <link href="~/coreui-5.1.2-dist/css/coreui-grid.css" rel="stylesheet" />
+    <link href="~/coreui-5.1.2-dist/css/coreui-grid.min.css" rel="stylesheet" />
+    <link href="~/coreui-5.1.2-dist/css/coreui-grid.rtl.css" rel="stylesheet" />
+    <link href="~/coreui-5.1.2-dist/css/coreui-grid.rtl.min.css" rel="stylesheet" />
+
+    <link href="~/coreui-5.1.2-dist/css/coreui-reboot.css" rel="stylesheet" />
+    <link href="~/coreui-5.1.2-dist/css/coreui-reboot.min.css" rel="stylesheet" />
+    <link href="~/coreui-5.1.2-dist/css/coreui-reboot.rtl.css" rel="stylesheet" />
+    <link href="~/coreui-5.1.2-dist/css/coreui-reboot.rtl.min.css" rel="stylesheet" />
+   
+    <link href="~/coreui-5.1.2-dist/css/coreui-utilities.css" rel="stylesheet" />
+    <link href="~/coreui-5.1.2-dist/css/coreui-utilities.min.css" rel="stylesheet" />
+    <link href="~/coreui-5.1.2-dist/css/coreui-utilities.rtl.css" rel="stylesheet" />
+    <link href="~/coreui-5.1.2-dist/css/coreui-utilities.rtl.min.css" rel="stylesheet" />
+    <script src="~/coreui-5.1.2-dist/js/bootstrap.bundle.js"></script>
+    <script src="~/coreui-5.1.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/coreui-5.1.2-dist/js/bootstrap.esm.js"></script>
+    <script src="~/coreui-5.1.2-dist/js/bootstrap.esm.min.js"></script>
+    <script src="~/coreui-5.1.2-dist/js/bootstrap.js"></script>
+    <script src="~/coreui-5.1.2-dist/js/bootstrap.min.js"></script>
+    <script src="~/coreui-5.1.2-dist/js/coreui.bundle.js"></script>
+    <script src="~/coreui-5.1.2-dist/js/coreui.bundle.min.js"></script>
+    <script src="~/coreui-5.1.2-dist/js/coreui.esm.js"></script>
+    <script src="~/coreui-5.1.2-dist/js/coreui.esm.min.js"></script>
+    <script src="~/coreui-5.1.2-dist/js/coreui.js"></script>
+    <script src="~/coreui-5.1.2-dist/js/coreui.min.js"></script>
+ 
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Contoso University</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+
+                    <ul class="nav nav-pills">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" asp-area="" asp-controller="Students" asp-action="Index">Students</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-coreui-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Separated link</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                        </li>
+                    </ul>
+                   
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2020 - Contoso University - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+     <script src="~/coreui/coreui/dist/js/coreui.bundle.min.js"></script>
+    <script src="node_modules/simplebar/dist/simplebar.min.js"></script>
+    <script>
+      const header = document.querySelector('header.header');
+
+      document.addEventListener('scroll', () => {
+        if (header) {
+          header.classList.toggle('shadow-sm', document.documentElement.scrollTop > 0);
+        }
+      });
+
+    </script>
+    <!-- Plugins and scripts required by this view-->
+    <script src="node_modules/chart.js/dist/chart.umd.js"></script>
+    <script src="~/coreui/chartjs/dist/js/coreui-chartjs.js"></script>
+    <script src="~/coreui/utils/dist/umd/index.js"></script>
+    <script src="js/main.js"></script>
+    <script> 
+    </script>
+</body>
+</html>
